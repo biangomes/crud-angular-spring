@@ -1,3 +1,4 @@
+import { Courses } from './../model/courses';
 import { Component } from '@angular/core';
 
 @Component({
@@ -5,6 +6,16 @@ import { Component } from '@angular/core';
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.scss']
 })
-export class CoursesComponent {
+export class CoursesComponent implements OnInit {
+
+  courses: Courses[] = [];
+
+  constructor() {
+    // this.courses = [];
+  }
+
+  ngOnInit(): void {
+
+  }
 
 }
