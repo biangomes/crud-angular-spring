@@ -7,12 +7,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CoursesService {
 
-  // injecao de dependencia do angular
-  constructor(private http: HttpClient) { }
+  private readonly API = '/assets/courses.json';
 
-  findAll(): Courses[] {
-    return [
-      {_id: "1", name: "Angular", category: "front-end"}
-    ];
+  // injecao de dependencia do angular
+  constructor(private httpClient: HttpClient) { }
+
+  // Retorna um Observable de Objeto
+  // Com o .get<Courses> : retorna um Observable de Courses
+  findAll() {
+    return this.httpClient.get<Courses>(this.API);
   }
 }
